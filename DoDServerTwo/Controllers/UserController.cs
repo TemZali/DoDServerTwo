@@ -31,7 +31,7 @@ namespace DoDServerTwo.Controllers
         [HttpGet("{id}")]
         public IActionResult Get(string id)
         {
-            if (userRepository.DoesUserExist(id))
+            if (userRepository.IsPasswordRight(id))
             {
                 return CreatedAtAction("OK", true);
             }

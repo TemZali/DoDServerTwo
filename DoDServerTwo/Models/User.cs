@@ -12,5 +12,7 @@ namespace DoDServerTwo.Models
         public string Username { get; set; }
 
         public string Userstatus { get; set; }
+
+        public string Userpassword { get; set; }
     }
 }
