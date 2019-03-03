@@ -16,21 +16,21 @@ namespace DoDServerTwo.Services
             return users;
         }
 
-        public bool IsPasswordRight(string username_password)
+        public User IsPasswordRight(string username_password)
         {
-            string[] info = username_password.Split(',');
+            string[] info = username_password.Split();
             foreach(User user in users)
             {
                 if (user.Username == info[0])
                 {
                     if (user.Userpassword == info[1])
                     {
-                        return true;
+                        return user;
                     }
-                    return false;
+                    return null;
                 }
             }
-            return false;
+            return null;
         }
 
         public int GetCount()

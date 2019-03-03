@@ -15,6 +15,6 @@ namespace DoDServerTwo.Interfaces
         List<User> All();
         int FindByName(string name);
         int GetCount();
-        bool IsPasswordRight(string username_password);
+        User IsPasswordRight(string username_password);
     }
 }

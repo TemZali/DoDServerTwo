@@ -29,15 +29,16 @@ namespace DoDServerTwo.Controllers
         }
 
         [HttpGet("{id}")]
-        public IActionResult Get(string id)
+        public User Get(string id)
         {
-            if (userRepository.IsPasswordRight(id))
+            User user = userRepository.IsPasswordRight(id);
+            if(user!=null)
             {
-                return CreatedAtAction("OK", true);
+                return user;
             }
             else
             {
-                return BadRequest();
+                return null;
             }
         }
 
